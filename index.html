@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Puget Land & Development Advisors | Pacific Northwest Land Consulting</title>
+  <meta name="description" content="Expert real estate development and land use consulting across Washington State — from Puget Sound shorelines to the eastern Cascades." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --green-dark:   #085041;
+      --green-mid:    #0F6E56;
+      --green-bright: #1D9E75;
+      --green-light:  #5DCAA5;
+      --green-pale:   #9FE1CB;
+      --green-wash:   #E1F5EE;
+      --text-primary: #1a1a18;
+      --text-secondary: #5a5a56;
+      --text-muted:   #8a8a84;
+      --border:       rgba(0,0,0,0.12);
+      --bg:           #ffffff;
+      --bg-surface:   #f7f6f2;
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      color: var(--text-primary);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2.5rem;
+      border-bottom: 0.5px solid var(--border);
+      background: var(--bg);
+      position: sticky; top: 0; z-index: 100;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px; font-weight: 600; letter-spacing: 0.02em;
+      color: var(--text-primary); text-decoration: none;
+    }
+    .nav-logo span { color: var(--green-bright); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 13px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase;
+      color: var(--text-secondary); text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text-primary); }
+
+    /* HERO */
+    .hero {
+      display: grid; grid-template-columns: 1fr 1fr; min-height: 480px;
+    }
+    .hero-text {
+      padding: 4rem 2.5rem 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 0.5px solid var(--border);
+    }
+    .hero-eyebrow {
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--green-bright); margin-bottom: 1.25rem; font-weight: 500;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px; font-weight: 500; line-height: 1.18;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title em { font-style: italic; color: var(--green-bright); }
+    .hero-sub {
+      font-size: 16px; font-weight: 300; line-height: 1.75;
+      color: var(--text-secondary); max-width: 440px; margin-bottom: 2.5rem;
+    }
+    .btn-primary {
+      display: inline-block; padding: 0.75rem 2rem;
+      background: var(--green-mid); color: var(--green-wash);
+      font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+      border: none; cursor: pointer; font-family: 'Source Sans 3', sans-serif;
+      font-weight: 500; border-radius: 2px; text-decoration: none; transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--green-bright); }
+    .hero-map {
+      background: var(--green-wash);
+      display: flex; align-items: center; justify-content: center;
+      padding: 2rem;
+    }
+
+    /* STATS */
+    .stats-bar {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 0.5px solid var(--border);
+      border-bottom: 0.5px solid var(--border);
+    }
+    .stat-item {
+      padding: 1.75rem 2rem;
+      border-right: 0.5px solid var(--border);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px; font-weight: 400; color: var(--green-mid);
+    }
+    .stat-label {
+      font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--text-secondary); margin-top: 4px;
+    }
+
+    /* SECTIONS */
+    section { padding: 4rem 2.5rem; border-bottom: 0.5px solid var(--border); }
+    .section-header {
+      display: flex; align-items: baseline; gap: 1.5rem; margin-bottom: 3rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px; font-weight: 500; white-space: nowrap;
+    }
+    .section-line { flex: 1; height: 0.5px; background: var(--border); }
+
+    /* SERVICES */
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+    }
+    .service-card {
+      padding: 1.75rem;
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg);
+      transition: border-color 0.2s;
+    }
+    .service-card:hover { border-color: var(--green-light); }
+    .service-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--green-wash); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .service-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px; font-weight: 500; margin-bottom: 0.75rem;
+    }
+    .service-desc {
+      font-size: 14px; line-height: 1.7; color: var(--text-secondary); font-weight: 300;
+    }
+    .service-tag {
+      display: inline-block; margin-top: 1rem;
+      font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--green-bright); font-weight: 500;
+    }
+
+    /* REGIONS */
+    .regions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .region-list { list-style: none; margin-top: 1.5rem; }
+    .region-list li {
+      display: flex; align-items: center; gap: 1rem;
+      padding: 0.75rem 0; border-bottom: 0.5px solid var(--border);
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .region-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green-bright); flex-shrink: 0; }
+    .region-name { font-weight: 500; color: var(--text-primary); }
+
+    /* TEAM */
+    .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .team-card {
+      padding: 1.5rem;
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+    }
+    .team-avatar {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: var(--green-wash); display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 500; color: var(--green-mid); margin-bottom: 1rem;
+    }
+    .team-name { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 500; }
+    .team-role { font-size: 12px; color: var(--green-bright); margin-top: 2px; letter-spacing: 0.04em; }
+    .team-bio { font-size: 13px; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.65; font-weight: 300; }
+
+    /* CONTACT */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
+    .contact-title { font-family: 'Playfair Display', serif; font-size: 28px; margin-bottom: 1rem; }
+    .contact-sub { font-size: 15px; color: var(--text-secondary); line-height: 1.7; font-weight: 300; margin-bottom: 2rem; }
+    .contact-detail { font-size: 14px; color: var(--text-secondary); margin-bottom: 1.25rem; line-height: 1.7; }
+    .contact-detail strong { color: var(--text-primary); font-weight: 500; display: block; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      padding: 0.7rem 1rem; font-size: 14px;
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      background: var(--bg-surface);
+      color: var(--text-primary);
+      font-family: 'Source Sans 3', sans-serif;
+      outline: none; transition: border-color 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus { border-color: var(--green-bright); }
+    .contact-form textarea { height: 120px; resize: vertical; }
+
+    /* FOOTER */
+    footer {
+      padding: 1.5rem 2.5rem;
+      border-top: 0.5px solid var(--border);
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 14px; color: var(--text-secondary); }
+    .footer-logo span { color: var(--green-bright); }
+    .footer-copy { font-size: 12px; color: var(--text-muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a { font-size: 12px; color: var(--text-muted); text-decoration: none; }
+    .footer-links a:hover { color: var(--text-secondary); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero { grid-template-columns: 1fr; }
+      .hero-map { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .services-grid { grid-template-columns: 1fr; }
+      .regions-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .team-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 1rem; text-align: center; }
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      section { padding: 3rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-logo" href="#">Puget Land <span>&</span> Development Advisors</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#regions">Regions</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-text">
+      <div class="hero-eyebrow">Pacific Northwest Land Consulting</div>
+      <h1 class="hero-title">Where land meets<br><em>smart strategy</em></h1>
+      <p class="hero-sub">Expert guidance on real estate development and land use planning across Washington State — from Puget Sound shorelines to the eastern Cascades.</p>
+      <a href="#contact" class="btn-primary">Explore our services &rarr;</a>
+    </div>
+    <div class="hero-map">
+      <svg viewBox="0 0 320 300" width="320" height="300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60,40 L80,35 L120,30 L160,38 L200,32 L240,45 L260,80 L255,120 L240,160 L220,200 L200,240 L180,265 L160,270 L140,265 L120,240 L100,220 L80,200 L60,170 L50,140 L45,100 L50,70 Z" fill="#9FE1CB" stroke="#1D9E75" stroke-width="1.5"/>
+        <path d="M120,80 L130,75 L160,78 L170,85 L165,110 L155,125 L140,130 L125,120 L115,105 L118,88 Z" fill="#5DCAA5" opacity="0.6"/>
+        <path d="M80,130 Q90,120 100,125 Q115,115 130,120 Q140,110 150,115 Q165,108 175,115 Q185,105 195,112 Q200,120 198,135 Q190,145 178,148 Q165,155 150,152 Q135,158 120,150 Q105,155 90,148 Q78,142 80,130Z" fill="#085041" opacity="0.15"/>
+        <circle cx="145" cy="120" r="5" fill="#0F6E56"/>
+        <circle cx="145" cy="120" r="10" fill="#1D9E75" opacity="0.2"/>
+        <text x="155" y="118" font-size="9" fill="#085041" font-family="Georgia, serif" font-style="italic">Seattle</text>
+        <circle cx="110" cy="145" r="3.5" fill="#0F6E56"/>
+        <text x="118" y="148" font-size="8" fill="#085041" font-family="Georgia, serif" font-style="italic">Tacoma</text>
+        <circle cx="170" cy="95" r="3.5" fill="#0F6E56"/>
+        <text x="178" y="98" font-size="8" fill="#085041" font-family="Georgia, serif" font-style="italic">Everett</text>
+        <circle cx="190" cy="155" r="3" fill="#5DCAA5"/>
+        <text x="195" y="158" font-size="7" fill="#085041" font-family="Georgia, serif" font-style="italic">Bellevue</text>
+        <text x="60" y="290" font-size="9" fill="#0F6E56" font-family="Georgia, serif" font-style="italic">Washington State</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-number">200+</div><div class="stat-label">Projects completed</div></div>
+    <div class="stat-item"><div class="stat-number">18</div><div class="stat-label">Washington counties served</div></div>
+    <div class="stat-item"><div class="stat-number">94%</div><div class="stat-label">Permit approval rate</div></div>
+    <div class="stat-item"><div class="stat-number">15</div><div class="stat-label">Years in the Pacific Northwest</div></div>
+  </div>
+
+  <section id="services">
+    <div class="section-header">
+      <h2 class="section-title">Our services</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="8" width="4" height="6" fill="#0F6E56"/><rect x="6" y="5" width="4" height="9" fill="#1D9E75"/><rect x="10" y="2" width="4" height="12" fill="#5DCAA5"/></svg></div>
+        <div class="service-title">Real Estate Development Consulting</div>
+        <div class="service-desc">From site selection to entitlement strategy, we guide developers through every stage — feasibility analysis, pro forma review, and stakeholder coordination.</div>
+        <div class="service-tag">Development &rarr;</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2,14 L8,2 L14,14 Z" fill="#1D9E75"/><circle cx="8" cy="10" r="2" fill="#E1F5EE"/></svg></div>
+        <div class="service-title">Land Use Planning & Zoning</div>
+        <div class="service-desc">We navigate complex zoning codes, Comprehensive Plan amendments, conditional use permits, and variance applications with Washington counties and municipalities.</div>
+        <div class="service-tag">Zoning &rarr;</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6" stroke="#1D9E75" stroke-width="1.5" fill="none"/><path d="M5,8 L7,10 L11,6" stroke="#1D9E75" stroke-width="1.5"/></svg></div>
+        <div class="service-title">Environmental & SEPA Review</div>
+        <div class="service-desc">Coordinating State Environmental Policy Act compliance, wetland assessments, critical area reports, and agency negotiations to keep your project on schedule.</div>
+        <div class="service-tag">Environmental &rarr;</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="2" width="5" height="5" rx="1" fill="#5DCAA5"/><rect x="9" y="2" width="5" height="5" rx="1" fill="#1D9E75"/><rect x="2" y="9" width="5" height="5" rx="1" fill="#1D9E75"/><rect x="9" y="9" width="5" height="5" rx="1" fill="#5DCAA5"/></svg></div>
+        <div class="service-title">Subdivision & Platting</div>
+        <div class="service-desc">Short plats, long plats, boundary line adjustments, and lot aggregations — we manage the county process from preliminary approval through final recording.</div>
+        <div class="service-tag">Platting &rarr;</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2,12 Q5,4 8,8 Q11,12 14,4" stroke="#1D9E75" stroke-width="1.5" fill="none"/></svg></div>
+        <div class="service-title">Market & Feasibility Analysis</div>
+        <div class="service-desc">Data-driven market studies, highest-and-best-use analysis, and absorption forecasts for residential, commercial, and mixed-use projects across Puget Sound.</div>
+        <div class="service-tag">Analysis &rarr;</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8,2 L14,6 L14,14 L2,14 L2,6 Z" stroke="#1D9E75" stroke-width="1.5" fill="none"/><path d="M5,14 L5,9 L11,9 L11,14" stroke="#1D9E75" stroke-width="1.2" fill="none"/></svg></div>
+        <div class="service-title">Government & Agency Relations</div>
+        <div class="service-desc">Representing clients before planning commissions, county councils, and state agencies. Testimony preparation, appeal support, and interagency coordination.</div>
+        <div class="service-tag">Advocacy &rarr;</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="regions">
+    <div class="regions-grid">
+      <div>
+        <div class="section-header"><h2 class="section-title">Regions served</h2><div class="section-line"></div></div>
+        <ul class="region-list">
+          <li><div class="region-dot"></div><span class="region-name">Snohomish County</span>&nbsp;&mdash; Everett, Marysville, Monroe, Lynnwood</li>
+          <li><div class="region-dot"></div><span class="region-name">King County</span>&nbsp;&mdash; Seattle, Bellevue, Redmond, Kirkland</li>
+          <li><div class="region-dot"></div><span class="region-name">Pierce County</span>&nbsp;&mdash; Tacoma, Puyallup, Gig Harbor</li>
+          <li><div class="region-dot"></div><span class="region-name">Kitsap County</span>&nbsp;&mdash; Bremerton, Poulsbo, Port Orchard</li>
+          <li><div class="region-dot"></div><span class="region-name">Whatcom County</span>&nbsp;&mdash; Bellingham, Ferndale, Blaine</li>
+          <li><div class="region-dot"></div><span class="region-name">Skagit County</span>&nbsp;&mdash; Mount Vernon, Burlington, Anacortes</li>
+        </ul>
+      </div>
+      <div>
+        <div class="section-header"><h2 class="section-title">Project types</h2><div class="section-line"></div></div>
+        <ul class="region-list">
+          <li><div class="region-dot"></div><span class="region-name">Residential</span>&nbsp;&mdash; Single family, multifamily, ADUs</li>
+          <li><div class="region-dot"></div><span class="region-name">Commercial</span>&nbsp;&mdash; Retail, office, mixed-use infill</li>
+          <li><div class="region-dot"></div><span class="region-name">Industrial</span>&nbsp;&mdash; Logistics, light manufacturing, flex</li>
+          <li><div class="region-dot"></div><span class="region-name">Agricultural</span>&nbsp;&mdash; Farm preservation, rural rezones</li>
+          <li><div class="region-dot"></div><span class="region-name">Shoreline</span>&nbsp;&mdash; SMA permits, waterfront development</li>
+          <li><div class="region-dot"></div><span class="region-name">Public / Institutional</span>&nbsp;&mdash; Schools, utilities, civic uses</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="section-header"><h2 class="section-title">Our team</h2><div class="section-line"></div></div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">MW</div>
+        <div class="team-name">Margaret Whitfield</div>
+        <div class="team-role">Principal & Founder</div>
+        <div class="team-bio">20+ years in Washington land use law and development entitlements. Former Snohomish County planner. Licensed in WA State.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">DS</div>
+        <div class="team-name">Daniel Sorenson</div>
+        <div class="team-role">Senior Development Advisor</div>
+        <div class="team-bio">Specializes in mixed-use infill and urban rezones across King and Pierce Counties. AICP certified planner.</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">RC</div>
+        <div class="team-name">Rosa Callahan</div>
+        <div class="team-role">Environmental Planning Lead</div>
+        <div class="team-bio">SEPA coordinator and wetland specialist. Extensive experience with critical areas ordinances across Puget Sound counties.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="contact-grid">
+      <div>
+        <h2 class="contact-title">Get in touch</h2>
+        <p class="contact-sub">Whether you have a parcel under contract or a long-range development vision, we would like to hear about your project.</p>
+        <div class="contact-detail"><strong>Address</strong>3200 Wetmore Ave, Suite 400<br>Everett, WA 98201</div>
+        <div class="contact-detail"><strong>Phone</strong>(425) 555-0182</div>
+        <div class="contact-detail"><strong>Email</strong>info@pugetlandadvisors.com</div>
+        <div class="contact-detail"><strong>Hours</strong>Monday &ndash; Friday, 8:00 am &ndash; 5:00 pm PST</div>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="return false;">
+          <input type="text" placeholder="Your name" />
+          <input type="email" placeholder="Email address" />
+          <select>
+            <option value="">Select a service area</option>
+            <option>Real Estate Development</option>
+            <option>Land Use & Zoning</option>
+            <option>Environmental Review</option>
+            <option>Subdivision & Platting</option>
+            <option>Market Analysis</option>
+            <option>Government Relations</option>
+          </select>
+          <textarea placeholder="Tell us about your project..."></textarea>
+          <button type="submit" class="btn-primary">Send inquiry &rarr;</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-logo">Puget Land <span>&</span> Development Advisors</div>
+    <div class="footer-copy">&copy; 2026 Puget Land & Development Advisors LLC &nbsp;&middot;&nbsp; Everett, WA</div>
+    <div class="footer-links">
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
