@@ -58,3 +58,6 @@ LinkedIn: linkedin.com/in/jtoddwelch
 Web: jtoddwelch.com
 ---
 Part of my Azure Learning Lab portfolio. See azure-learning for cloud infrastructure work.
+---
+Phase 1 complete — April 12, 2026. Site live at https://swa-pugetland-prod.azurestaticapps.net
+
