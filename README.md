@@ -1,10 +1,10 @@
 # puget-land-advisor
 Puget Land & Development Advisors
 Static website for Puget Land & Development Advisors, a Pacific Northwest real estate development and land use consulting firm based in Everett, WA.
-Built as a portfolio project demonstrating static site development, GitHub Pages hosting, and clean frontend design.
+Built as a portfolio project demonstrating static site development, Azure Static Web Apps hosting, and clean frontend design.
 ---
 Live Site
-https://jtoddwelch.github.io/puget-land-advisors
+https://black-rock-0e65d2c1e1.azurestaticapps.net
 ---
 About the Project
 This is a single-page static website built with plain HTML and CSS — no frameworks, no dependencies, no build tools. Just one file you can open in any browser.
@@ -14,54 +14,41 @@ Clean typographic layout with Playfair Display and Source Sans 3
 Fully responsive down to mobile
 Fast load — no JavaScript required
 ---
-Pages / Sections
-Section	Description
-Hero	Tagline, intro copy, illustrated WA State map
-Stats	Key credibility numbers
-Services	Six service areas with descriptions
-Regions	Counties and project types served
-Team	Three team member profiles
-Contact	Office info and inquiry form
----
 Tech Stack
 Layer	Choice
 Markup	HTML5
 Styling	CSS3 with custom properties
 Fonts	Google Fonts (Playfair Display, Source Sans 3)
-Hosting	GitHub Pages
+Hosting	Azure Static Web Apps (Free tier)
+CI/CD	GitHub Actions
 Build tools	None
 ---
 Local Development
-No install needed. Just open the file:
-```bash
-git clone https://github.com/jtoddwelch/puget-land-advisors.git
-cd puget-land-advisors
-open index.html
-```
-Or use VS Code Live Server for auto-reload during edits.
+No install needed. Just open the file in a browser, or use VS Code Live Server for auto-reload during edits.
 ---
 Deployment
-Hosted via GitHub Pages from the `main` branch root.
-To deploy updates:
-```bash
+Hosted via Azure Static Web Apps, deployed automatically on every push to main via GitHub Actions.
+
+First-time Azure setup:
+1. Create an Azure Static Web App in the Azure Portal
+2. Copy the deployment token from: Azure Portal → your Static Web App → Settings → Deployment token
+3. Add it to GitHub: repo Settings → Secrets and variables → Actions → New repository secret
+   - Name: AZURE_STATIC_WEB_APPS_API_TOKEN
+   - Value: (paste the token)
+
+Deploying updates:
 git add .
 git commit -m "update: describe your change"
 git push origin main
-```
-GitHub Pages rebuilds automatically on every push.
+
+GitHub Actions rebuilds and redeploys automatically.
 ---
 Custom Domain (Optional)
-To connect a custom domain like `pugetlandadvisors.com`:
-Buy the domain (Namecheap, Google Domains, etc.)
-In repo Settings → Pages → Custom domain, enter your domain
-Add a `CNAME` file to the repo root containing just: `pugetlandadvisors.com`
-Point your DNS A records to GitHub's IPs:
-```
-   185.199.108.153
-   185.199.109.153
-   185.199.110.153
-   185.199.111.153
-   ```
+To connect a custom domain like pugetlandadvisors.com:
+1. Buy the domain (Namecheap, Google Domains, etc.)
+2. In Azure Portal → your Static Web App → Custom domains → Add
+3. Follow the DNS verification steps Azure provides
+4. Azure auto-provisions and renews the SSL certificate
 ---
 Project Author
 Jeremy Todd Welch
