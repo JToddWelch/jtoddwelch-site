@@ -1,94 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todd Welch | Technology, Land Use & Civic Leadership</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J. Todd Welch — Everett, WA</title>
+<meta name="description" content="Navy veteran, sovereign cloud engineer, opinion columnist, and Everett planning commissioner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 2.5rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 45%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--steel) 0%, var(--navy) 60%);
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+    opacity: 0.5;
+  }
+
+  .hero-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 1.25rem;
+  }
+
+  .hero h1 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    color: #fff;
+    line-height: 1.08;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em { font-style: italic; color: var(--sky); }
+
+  .hero-bio {
+    font-size: 1.05rem;
+    color: var(--fog);
+    max-width: 540px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+  }
+
+  .hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 3rem;
+  }
+
+  .tag {
+    background: rgba(91,163,194,0.12);
+    border: 1px solid rgba(91,163,194,0.28);
+    color: var(--sky);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 2px;
+  }
+
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+  /* pillars */
+  .pillars { background: var(--sand); }
+
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .pillar {
+    background: #fff;
+    border-left: 3px solid var(--tide);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: border-left-color 0.2s, box-shadow 0.2s;
+  }
+
+  .pillar:hover {
+    border-left-color: var(--sky);
+    box-shadow: 0 4px 16px rgba(13,31,45,0.08);
+  }
+
+  .pillar-icon {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .pillar h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+  }
+
+  .pillar p {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .pillar-link {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--tide);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 640px) {
+    .hero { padding: 7rem 1.25rem 4rem; }
+  }
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="index.html">
-        <img src="assets/images/welch-logo.png" alt="Todd Welch logo" class="brand-logo" />
-        <span>Todd Welch</span>
+<nav>
+  <a href="index.html" class="nav-brand">J. Todd Welch</a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="land-use.html">Land Use</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Everett, Washington</p>
+    <h1>Jeremy <em>Todd</em> Welch</h1>
+    <p class="hero-bio">
+      Twenty-year Navy veteran turned sovereign cloud engineer. I build secure federal infrastructure, write opinion columns for the Everett Herald, and serve on the City of Everett Planning Commission.
+    </p>
+    <div class="hero-tags">
+      <span class="tag">Top Secret Eligible (CE)</span>
+      <span class="tag">Azure Cloud Engineering</span>
+      <span class="tag">Federal IT</span>
+      <span class="tag">Navy Veteran · 20 Years</span>
+      <span class="tag">MBA · Columbia College</span>
+    </div>
+    <div class="hero-cta">
+      <a href="writing.html" class="btn btn-primary">Read My Columns</a>
+      <a href="resume.html" class="btn btn-ghost">View Resume</a>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="section-inner">
+    <p class="section-label">What I Do</p>
+    <h2 class="section-title">Four Areas of Work</h2>
+    <hr class="rule">
+    <div class="pillar-grid">
+
+      <a href="technology.html" class="pillar">
+        <div class="pillar-icon">☁️</div>
+        <h3>Cloud Engineering</h3>
+        <p>Sovereign and federal cloud infrastructure on Microsoft Azure. Active TS eligibility. Pursuing AZ-104 and AZ-305.</p>
+        <span class="pillar-link">View Technology →</span>
       </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="technology.html">Technology</a>
-        <a href="land-use.html">Land Use</a>
-        <a href="writing.html">Writing</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+
+      <a href="writing.html" class="pillar">
+        <div class="pillar-icon">✍️</div>
+        <h3>Opinion Columnist</h3>
+        <p>Regular contributor to the Everett Herald on local government, fiscal accountability, land use, and public policy.</p>
+        <span class="pillar-link">Read Columns →</span>
+      </a>
+
+      <a href="land-use.html" class="pillar">
+        <div class="pillar-icon">🏛️</div>
+        <h3>Civic Service</h3>
+        <p>City of Everett Planning Commissioner. Former Lake Stevens City Councilmember, 2012–2019.</p>
+        <span class="pillar-link">View Civic Work →</span>
+      </a>
+
+      <a href="resume.html" class="pillar">
+        <div class="pillar-icon">⚓</div>
+        <h3>Navy Veteran</h3>
+        <p>Twenty years as a Navy Electronics Technician. The foundation behind everything I do in federal IT and public service.</p>
+        <span class="pillar-link">Full Resume →</span>
+      </a>
+
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-
-    <section class="hero">
-      <div class="container">
-        <p class="eyebrow">Technology | Land Use | Civic Leadership</p>
-        <h2>Building better systems for stronger communities.</h2>
-        <p class="hero-text">
-          I work at the intersection of technology, public systems, land use, and practical civic problem-solving.
-          My focus is on cloud systems, project management, housing policy, local government, and the tools that help communities make better decisions.
-        </p>
-        <div class="hero-buttons">
-          <a class="button primary" href="technology.html">View Technology Work</a>
-          <a class="button secondary" href="land-use.html">Explore Land Use</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="focus-section">
-      <div class="container grid">
-        <div class="card">
-          <h3>Technology</h3>
-          <p>
-            Cloud systems, Microsoft Azure, PowerShell, automation, governance, and digital tools that improve how organizations work.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Land Use</h3>
-          <p>
-            Housing, zoning, DADUs, comprehensive planning, infrastructure, parking reform, and the local impacts of state policy.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Civic Leadership</h3>
-          <p>
-            Practical experience in city government, planning commissions, community growth, and public decision-making.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="about-preview">
-      <div class="container">
-        <h2>A practical bridge between technology and local government.</h2>
-        <p>
-          My background includes military service, project management, local government, planning commission work,
-          housing and land-use policy, and a growing focus on cloud technology and automation.
-        </p>
-        <p>
-          I am especially interested in how technology can improve public-sector operations, how land-use decisions shape communities,
-          and how practical leadership can move complex issues toward real solutions.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Todd Welch. All rights reserved.</p>
-    </div>
-  </footer>
+<footer>
+  <p>© 2026 J. Todd Welch · Everett, WA</p>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/jtoddwelch" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JToddWelch" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/JToddWelch" target="_blank" rel="noopener">X</a>
+  </div>
+</footer>
 
 </body>
 </html>

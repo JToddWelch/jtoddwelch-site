@@ -1,71 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Technology | Todd Welch</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology — J. Todd Welch</title>
+<meta name="description" content="J. Todd Welch — sovereign cloud systems administrator, Azure engineer, federal IT professional with active TS eligibility.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .cert-card {
+    border: 1px solid var(--rule);
+    padding: 1.25rem;
+    border-radius: 2px;
+  }
+
+  .cert-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+
+  .cert-code {
+    font-size: 0.75rem;
+    color: var(--tide);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    margin-bottom: 0.5rem;
+  }
+
+  .cert-status {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+  }
+
+  .cert-status.in-progress {
+    background: rgba(46,110,142,0.1);
+    color: var(--tide);
+  }
+
+  .cert-status.complete {
+    background: rgba(34,130,100,0.1);
+    color: #226655;
+  }
+
+  .stack-block { margin-bottom: 2.5rem; }
+
+  .stack-block h3 {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+
+  .project-card {
+    border: 1px solid var(--rule);
+    border-left: 3px solid var(--tide);
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: border-left-color 0.2s;
+  }
+
+  .project-card:hover { border-left-color: var(--sky); }
+
+  .project-name {
+    font-weight: 600;
+    font-size: 0.92rem;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+
+  .project-desc {
+    font-size: 0.84rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.6rem;
+  }
+
+  .project-tag {
+    background: var(--fog);
+    color: var(--steel);
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  .clearance-banner {
+    background: var(--navy);
+    color: var(--fog);
+    padding: 1.5rem 2rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .clearance-banner strong { color: var(--sky); font-size: 1rem; }
+  .clearance-banner p { font-size: 0.88rem; line-height: 1.6; opacity: 0.85; }
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="index.html">
-        <img src="assets/images/welch-logo.png" alt="Todd Welch logo" class="brand-logo" />
-        <span>Todd Welch</span>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="technology.html">Technology</a>
-        <a href="land-use.html">Land Use</a>
-        <a href="writing.html">Writing</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<nav>
+  <a href="index.html" class="nav-brand">J. Todd Welch</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="land-use.html">Land Use</a></li>
+    <li><a href="technology.html" class="active">Technology</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Technology & Digital Systems</p>
-        <h2>Cloud, automation, and practical technology leadership.</h2>
-        <p class="hero-text">
-          My technology focus includes Microsoft Azure, PowerShell, automation, identity governance, systems administration, and digital tools that improve how organizations operate.
-        </p>
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Cloud Engineering</p>
+    <h1 class="page-title">Technology</h1>
+    <p class="page-subtitle">Sovereign cloud infrastructure, Azure engineering, and federal IT with an active Top Secret eligibility.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+
+    <div class="clearance-banner">
+      <div>
+        <strong>Top Secret Eligible — CE</strong>
+        <p>Active Continuous Evaluation (CE). Available for cleared federal, defense, and sovereign cloud roles in the Pacific Northwest and remote.</p>
       </div>
-    </section>
+    </div>
 
-    <section class="content-section">
-      <div class="container">
-        <h2>Technology Focus Areas</h2>
+    <p class="section-label">Current Work</p>
+    <h2 class="section-title">Sovereign Cloud Administration</h2>
+    <hr class="rule">
 
-        <div class="grid">
-          <div class="card">
-            <h3>Azure & Cloud Systems</h3>
-            <p>Hands-on learning with Azure services, identity, governance, infrastructure, and cloud administration.</p>
-          </div>
-
-          <div class="card">
-            <h3>PowerShell & Automation</h3>
-            <p>Using scripting and automation to reduce repetitive work, improve consistency, and support scalable operations.</p>
-          </div>
-
-          <div class="card">
-            <h3>Project Management</h3>
-            <p>Structured planning, execution, stakeholder communication, documentation, and implementation tracking.</p>
-          </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-date">2016 – Now</div>
+        <div class="tl-line"></div>
+        <div>
+          <div class="tl-title">Sovereign Cloud Systems Administrator</div>
+          <div class="tl-org">Insight Global / Microsoft</div>
+          <div class="tl-desc">Supporting Microsoft's sovereign and federal cloud platforms. Work involves infrastructure administration, compliance operations, and systems support within controlled and classified environments. Focused on architect-level understanding of Azure services — not just operating them, but understanding why they're designed the way they are.</div>
         </div>
       </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Todd Welch. All rights reserved.</p>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<section style="background: var(--sand);">
+  <div class="section-inner">
+    <p class="section-label">Certification Path</p>
+    <h2 class="section-title">Azure Credentials</h2>
+    <hr class="rule">
+
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-code">AZ-900</div>
+        <div class="cert-name">Azure Fundamentals</div>
+        <span class="cert-status in-progress">In Progress</span>
+      </div>
+      <div class="cert-card">
+        <div class="cert-code">AZ-104</div>
+        <div class="cert-name">Azure Administrator Associate</div>
+        <span class="cert-status in-progress">In Progress</span>
+      </div>
+      <div class="cert-card">
+        <div class="cert-code">AZ-305</div>
+        <div class="cert-name">Azure Solutions Architect Expert</div>
+        <span class="cert-status in-progress">In Progress</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label">Stack</p>
+    <h2 class="section-title">Tools & Technologies</h2>
+    <hr class="rule">
+
+    <div class="stack-block">
+      <h3>Azure Services</h3>
+      <div class="badge-group">
+        <span class="badge accent">Azure Static Web Apps</span>
+        <span class="badge accent">Azure Resource Manager</span>
+        <span class="badge accent">Azure Active Directory</span>
+        <span class="badge accent">Azure Monitor</span>
+        <span class="badge accent">Azure Policy</span>
+        <span class="badge accent">Cost Management</span>
+      </div>
+    </div>
+
+    <div class="stack-block">
+      <h3>DevOps & Automation</h3>
+      <div class="badge-group">
+        <span class="badge">GitHub Actions</span>
+        <span class="badge">CI/CD Pipelines</span>
+        <span class="badge">Git</span>
+        <span class="badge">PowerShell</span>
+        <span class="badge">Infrastructure as Code</span>
+      </div>
+    </div>
+
+    <div class="stack-block">
+      <h3>Systems & Networking</h3>
+      <div class="badge-group">
+        <span class="badge">Windows Server</span>
+        <span class="badge">Linux</span>
+        <span class="badge">DNS Management</span>
+        <span class="badge">Cloudflare</span>
+        <span class="badge">TCP/IP Networking</span>
+        <span class="badge">Federal Compliance Frameworks</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background: var(--fog);">
+  <div class="section-inner">
+    <p class="section-label">GitHub</p>
+    <h2 class="section-title">Projects</h2>
+    <hr class="rule">
+
+    <a class="project-card" href="https://github.com/JToddWelch/jtoddwelch-site" target="_blank" rel="noopener">
+      <div class="project-name">jtoddwelch-site</div>
+      <div class="project-desc">This website. HTML/CSS static site deployed via GitHub Actions to Azure Static Web Apps with a custom domain on Cloudflare DNS.</div>
+      <div class="project-tags">
+        <span class="project-tag">HTML/CSS</span>
+        <span class="project-tag">Azure SWA</span>
+        <span class="project-tag">GitHub Actions</span>
+        <span class="project-tag">Cloudflare</span>
+      </div>
+    </a>
+
+    <a class="project-card" href="https://github.com/JToddWelch/azure-learning" target="_blank" rel="noopener">
+      <div class="project-name">azure-learning</div>
+      <div class="project-desc">Azure certification study files and lab exercises. Structured around AZ-900, AZ-104, and AZ-305 with a fictional learning vehicle company, Puget Land & Development Advisors.</div>
+      <div class="project-tags">
+        <span class="project-tag">Azure</span>
+        <span class="project-tag">ARM Templates</span>
+        <span class="project-tag">Study Notes</span>
+      </div>
+    </a>
+
+    <p style="margin-top: 1.5rem; font-size: 0.85rem; color: var(--muted);">
+      More on <a href="https://github.com/JToddWelch" target="_blank" rel="noopener" style="color: var(--tide); font-weight: 500; text-decoration: none;">github.com/JToddWelch</a>
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 J. Todd Welch · Everett, WA</p>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/jtoddwelch" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JToddWelch" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/JToddWelch" target="_blank" rel="noopener">X</a>
+  </div>
+</footer>
 
 </body>
 </html>

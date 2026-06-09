@@ -1,84 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact | Todd Welch</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — J. Todd Welch</title>
+<meta name="description" content="Get in touch with J. Todd Welch — cloud engineer, columnist, and Everett planning commissioner.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .contact-card {
+    border: 1px solid var(--rule);
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    color: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .contact-card:hover {
+    border-color: var(--tide);
+    box-shadow: 0 4px 16px rgba(13,31,45,0.07);
+  }
+
+  .contact-card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.4rem;
+  }
+
+  .contact-card-value {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-card-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+
+  .contact-card .arrow {
+    float: right;
+    color: var(--rule);
+    font-size: 1.1rem;
+    transition: color 0.2s;
+  }
+
+  .contact-card:hover .arrow { color: var(--tide); }
+
+  .context-note {
+    margin-top: 3rem;
+    padding: 1.5rem;
+    background: var(--sand);
+    border-left: 3px solid var(--tide);
+  }
+
+  .context-note h3 {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1rem;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .context-note p {
+    font-size: 0.87rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 640px) {
+    .contact-block { grid-template-columns: 1fr; }
+  }
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="index.html">
-        <img src="assets/images/welch-logo.png" alt="Todd Welch logo" class="brand-logo" />
-        <span>Todd Welch</span>
+<nav>
+  <a href="index.html" class="nav-brand">J. Todd Welch</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="land-use.html">Land Use</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Get in Touch</p>
+    <h1 class="page-title">Contact</h1>
+    <p class="page-subtitle">For professional inquiries, column feedback, or civic matters.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+
+    <p class="section-label">Direct</p>
+    <h2 class="section-title">Reach Me</h2>
+    <hr class="rule">
+
+    <div class="contact-block">
+
+      <a href="mailto:todd@jtoddwelch.com" class="contact-card">
+        <span class="arrow">↗</span>
+        <div class="contact-card-label">Email</div>
+        <div class="contact-card-value">todd@jtoddwelch.com</div>
+        <div class="contact-card-note">Best for professional inquiries</div>
       </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="technology.html">Technology</a>
-        <a href="land-use.html">Land Use</a>
-        <a href="writing.html">Writing</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+
+      <a href="https://linkedin.com/in/jtoddwelch" target="_blank" rel="noopener" class="contact-card">
+        <span class="arrow">↗</span>
+        <div class="contact-card-label">LinkedIn</div>
+        <div class="contact-card-value">in/jtoddwelch</div>
+        <div class="contact-card-note">Professional network & career</div>
+      </a>
+
+      <a href="https://x.com/JToddWelch" target="_blank" rel="noopener" class="contact-card">
+        <span class="arrow">↗</span>
+        <div class="contact-card-label">X / Twitter</div>
+        <div class="contact-card-value">@JToddWelch</div>
+        <div class="contact-card-note">Commentary & local news</div>
+      </a>
+
+      <a href="https://github.com/JToddWelch" target="_blank" rel="noopener" class="contact-card">
+        <span class="arrow">↗</span>
+        <div class="contact-card-label">GitHub</div>
+        <div class="contact-card-value">JToddWelch</div>
+        <div class="contact-card-note">Code, projects, and Azure work</div>
+      </a>
+
     </div>
-  </header>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Contact</p>
-        <h2>Let’s connect.</h2>
-        <p class="hero-text">
-          I am open to conversations about technology, project management, land use, housing policy, civic leadership, and public-sector innovation.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section">
-      <div class="container">
-        <div class="contact-grid">
-          <div class="card">
-            <h3>Email</h3>
-            <p><a class="text-link" href="mailto:jtoddwelch@comcast.net">jtoddwelch@comcast.net</a></p>
-          </div>
-
-          <div class="card">
-            <h3>LinkedIn</h3>
-            <p><a class="text-link" href="https://www.linkedin.com/in/jtoddwelch" target="_blank">linkedin.com/in/jtoddwelch</a></p>
-          </div>
-
-          <div class="card">
-            <h3>GitHub</h3>
-            <p><a class="text-link" href="https://github.com/JToddWelch" target="_blank">github.com/JToddWelch</a></p>
-          </div>
-
-          <div class="card">
-            <h3>Website</h3>
-            <p><a class="text-link" href="https://jtoddwelch.com" target="_blank">jtoddwelch.com</a></p>
-          </div>
-        </div>
-
-        <div class="text-block">
-          <h2>Areas of Interest</h2>
-          <p>
-            My work and interests center on cloud systems, PowerShell, automation, project management, housing, zoning, local government, and land-use policy.
-          </p>
-          <p>
-            This site is intended as a professional platform for technology, civic leadership, and thoughtful commentary on the issues shaping communities.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Todd Welch. All rights reserved.</p>
+    <div class="context-note">
+      <h3>What I'm available for</h3>
+      <p>
+        Cleared federal and sovereign cloud roles in the Pacific Northwest or remote. Opinion writing, policy commentary, and civic engagement opportunities. Planning and land use matters related to Everett and Snohomish County.
+      </p>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 J. Todd Welch · Everett, WA</p>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/jtoddwelch" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JToddWelch" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/JToddWelch" target="_blank" rel="noopener">X</a>
+  </div>
+</footer>
 
 </body>
 </html>

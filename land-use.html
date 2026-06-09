@@ -1,89 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Land Use | Todd Welch</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Land Use & Civic — J. Todd Welch</title>
+<meta name="description" content="J. Todd Welch — City of Everett Planning Commissioner and former Lake Stevens City Councilmember.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .role-block {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .role-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+  .role-meta { padding-top: 0.25rem; }
+
+  .role-title {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+    line-height: 1.3;
+  }
+
+  .role-org {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--tide);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 0.3rem;
+  }
+
+  .role-tenure {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .role-body p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+
+  .role-body p:last-child { margin-bottom: 0; }
+
+  .focus-list {
+    list-style: none;
+    margin-top: 0.75rem;
+  }
+
+  .focus-list li {
+    font-size: 0.85rem;
+    color: var(--muted);
+    padding: 0.3rem 0 0.3rem 1rem;
+    border-left: 2px solid var(--tide);
+    margin-bottom: 0.4rem;
+  }
+
+  .policy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .policy-item {
+    background: var(--sand);
+    padding: 1rem 1.25rem;
+    border-top: 2px solid var(--tide);
+    font-size: 0.85rem;
+    color: var(--steel);
+    font-weight: 500;
+  }
+
+  @media (max-width: 640px) {
+    .role-block { grid-template-columns: 1fr; gap: 1rem; }
+  }
+</style>
 </head>
 <body>
 
-  <header class="site-header">
-    <div class="container nav-container">
-      <a class="brand" href="index.html">
-        <img src="assets/images/welch-logo.png" alt="Todd Welch logo" class="brand-logo" />
-        <span>Todd Welch</span>
-      </a>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="technology.html">Technology</a>
-        <a href="land-use.html">Land Use</a>
-        <a href="writing.html">Writing</a>
-        <a href="projects.html">Projects</a>
-        <a href="resume.html">Resume</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
+<nav>
+  <a href="index.html" class="nav-brand">J. Todd Welch</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="resume.html">Resume</a></li>
+    <li><a href="writing.html">Writing</a></li>
+    <li><a href="land-use.html" class="active">Land Use</a></li>
+    <li><a href="technology.html">Technology</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
 
-  <main>
-    <section class="page-hero">
-      <div class="container">
-        <p class="eyebrow">Land Use, Housing & Civic Leadership</p>
-        <h2>Practical land-use thinking for real communities.</h2>
-        <p class="hero-text">
-          Land use affects housing, transportation, infrastructure, neighborhood character, public finance, and the future shape of cities.
+<div class="page-header">
+  <div class="page-header-inner">
+    <p class="page-eyebrow">Public Service</p>
+    <h1 class="page-title">Land Use & Civic Work</h1>
+    <p class="page-subtitle">Planning, land use policy, and local government in Snohomish County.</p>
+  </div>
+</div>
+
+<section>
+  <div class="section-inner">
+
+    <p class="section-label">Current Role</p>
+    <h2 class="section-title">Planning Commission</h2>
+    <hr class="rule">
+
+    <div class="role-block">
+      <div class="role-meta">
+        <div class="role-title">City of Everett Planning Commission</div>
+        <div class="role-org">Commissioner</div>
+        <div class="role-tenure">Current Appointment</div>
+      </div>
+      <div class="role-body">
+        <p>
+          Serving as a Planning Commissioner for the City of Everett, reviewing land use applications, development proposals, variance requests, and long-range planning decisions. The commission makes recommendations to the City Council on matters affecting Everett's built environment and growth strategy.
+        </p>
+        <p>
+          Focus areas include infill development, transportation impact analysis, fiscal sustainability of growth, and the relationship between land use decisions and Everett's broader housing and infrastructure needs.
+        </p>
+        <ul class="focus-list">
+          <li>Land use applications and conditional use permits</li>
+          <li>Comprehensive plan amendments</li>
+          <li>Development standards and zoning code review</li>
+          <li>Transportation and infrastructure impact assessment</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section style="background: var(--sand);">
+  <div class="section-inner">
+
+    <p class="section-label">Prior Service</p>
+    <h2 class="section-title">Lake Stevens City Council</h2>
+    <hr class="rule">
+
+    <div class="role-block">
+      <div class="role-meta">
+        <div class="role-title">Lake Stevens City Council</div>
+        <div class="role-org">Councilmember</div>
+        <div class="role-tenure">2012 – 2019 · Seven Years</div>
+      </div>
+      <div class="role-body">
+        <p>
+          Seven years on the Lake Stevens City Council during a period of significant growth in Snohomish County. Participated in budget deliberations, land use policy decisions, utility planning, and municipal governance for a rapidly expanding community.
+        </p>
+        <p>
+          Developed a practical understanding of how local government budget constraints, state mandates, and community expectations intersect — experience that directly informs my current work on the Everett Planning Commission and my columns in the Herald.
         </p>
       </div>
-    </section>
-
-    <section class="content-section">
-      <div class="container">
-        <h2>Land Use Focus Areas</h2>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Housing & Zoning</h3>
-            <p>
-              Analysis of zoning reform, housing capacity, DADUs, ADUs, missing middle housing, and local housing policy.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Comprehensive Planning</h3>
-            <p>
-              Interest in how cities plan for growth, infrastructure, population targets, land capacity, and neighborhood change.
-            </p>
-          </div>
-
-          <div class="card">
-            <h3>Infrastructure & Concurrency</h3>
-            <p>
-              Focus on how transportation, utilities, public facilities, and capital planning support or limit responsible growth.
-            </p>
-          </div>
-        </div>
-
-        <div class="text-block">
-          <h2>Why Land Use Matters</h2>
-          <p>
-            Land-use decisions are among the most important choices local governments make. They influence affordability,
-            mobility, private property, public services, taxes, business development, and quality of life.
-          </p>
-          <p>
-            My approach is practical: growth should be planned, infrastructure should matter, local conditions should be respected,
-            and policy should be judged by real-world impacts on residents and communities.
-          </p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>&copy; 2026 Todd Welch. All rights reserved.</p>
     </div>
-  </footer>
+
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <p class="section-label">Policy Focus</p>
+    <h2 class="section-title">Areas of Interest</h2>
+    <hr class="rule">
+    <p style="color: var(--muted); font-size: 0.92rem; margin-bottom: 0.5rem;">Policy areas I follow closely in my writing and civic work:</p>
+    <div class="policy-grid">
+      <div class="policy-item">Homelessness & Behavioral Health Reform</div>
+      <div class="policy-item">Housing First Alternatives</div>
+      <div class="policy-item">Fiscal Impact of Development</div>
+      <div class="policy-item">Transportation & Traffic Mitigation</div>
+      <div class="policy-item">Snohomish County Land Use</div>
+      <div class="policy-item">Redistricting Reform</div>
+      <div class="policy-item">Local Government Accountability</div>
+      <div class="policy-item">Sound Transit Oversight</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 J. Todd Welch · Everett, WA</p>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/jtoddwelch" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JToddWelch" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://x.com/JToddWelch" target="_blank" rel="noopener">X</a>
+  </div>
+</footer>
 
 </body>
 </html>
